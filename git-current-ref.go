@@ -1,11 +1,11 @@
 package main
 
 import (
-	"github.com/michcioperz/raven_util"
-	"os"
-	"log"
 	"fmt"
+	"github.com/michcioperz/raven_util"
 	"github.com/urfave/cli"
+	"log"
+	"os"
 )
 
 func main() {
@@ -13,15 +13,15 @@ func main() {
 	app.Name = "git-current-ref"
 	app.Usage = "extract current commit"
 	pwd, err := os.Getwd()
-  if err != nil {
+	if err != nil {
 		pwd = "."
 	}
-	app.Flags = []cli.Flag {
+	app.Flags = []cli.Flag{
 		cli.BoolFlag{
 			Name: "verbose",
 		},
 		cli.StringFlag{
-			Name: "path",
+			Name:  "path",
 			Value: pwd,
 		},
 	}
